@@ -39,12 +39,13 @@ async def set_starter():
 # 
 client= AsyncOpenAI(
     api_key=os.getenv("GEMINI_API_KEY"),
+    base_url="https://generativelanguage.googleapis.com/v1beta/openai/"
 )
 
 cl.instrument_openai()
 
 settings= {
-    "model": "gemini/gemini-1.5-pro"
+    "model": "gemini-2.0-flash"
 }
 
 @cl.on_message
